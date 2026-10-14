@@ -693,6 +693,7 @@
       }
       .hot {
         position: absolute;
+        z-index: 2;
         width: 36px;
         height: 36px;
         border-radius: 50%;
@@ -717,6 +718,51 @@
       .hot:focus-visible {
         transform: translate(-50%, -50%) scale(1.12);
         box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+      .hot__popup {
+        position: absolute;
+        top: calc(100% + 14px);
+        left: 50%;
+        width: 190px;
+        padding: 8px;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+        color: var(--c-ink);
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translate(-50%, 6px);
+        transition:
+          opacity var(--ease),
+          transform var(--ease),
+          visibility var(--ease);
+      }
+      .hot__popup img {
+        width: 100%;
+        height: 112px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+      .hot__popup b,
+      .hot__popup small {
+        display: block;
+      }
+      .hot__popup b {
+        margin-top: 8px;
+        font-size: 13px;
+      }
+      .hot__popup small {
+        color: var(--c-muted);
+        font-size: 11px;
+        font-weight: 400;
+      }
+      .hot:hover .hot__popup,
+      .hot:focus-visible .hot__popup {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
       }
       .look__panel {
         padding: 56px 48px 40px;
@@ -1695,6 +1741,11 @@
             aria-label="View Area Rug"
           >
             <svg aria-hidden="true"><use href="#i-plus" /></svg>
+            <span class="hot__popup" aria-hidden="true">
+              <img src="./assets/rug.png" alt="" />
+              <b>Area Rug</b>
+              <small>Wool Blend Rug</small>
+            </span>
           </button>
           <button
             class="hot"
@@ -1703,6 +1754,11 @@
             aria-label="View Coffee Table"
           >
             <svg aria-hidden="true"><use href="#i-plus" /></svg>
+            <span class="hot__popup" aria-hidden="true">
+              <img src="./assets/table.png" alt="" />
+              <b>Coffee Table</b>
+              <small>Concrete Round Table</small>
+            </span>
           </button>
           <button
             class="hot"
@@ -1711,6 +1767,11 @@
             aria-label="View Sofa"
           >
             <svg aria-hidden="true"><use href="#i-plus" /></svg>
+            <span class="hot__popup" aria-hidden="true">
+              <img src="./assets/sofa.png" alt="" />
+              <b>Sofa</b>
+              <small>Modern Sectional</small>
+            </span>
           </button>
           <button
             class="hot"
@@ -1719,6 +1780,11 @@
             aria-label="View Epoxy Floor Finish"
           >
             <svg aria-hidden="true"><use href="#i-plus" /></svg>
+            <span class="hot__popup" aria-hidden="true">
+              <img src="./assets/floor.png" alt="" />
+              <b>Epoxy Floor Finish</b>
+              <small>Black Metallic Epoxy</small>
+            </span>
           </button>
         </div>
         <div class="look__panel">
